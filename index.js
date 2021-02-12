@@ -7,7 +7,7 @@ document.querySelector('button').onclick = () => {
             return alert('Usuario não encontrado!')
         }
         else {
-            return response.json().then(tratados => retorno(tratados))
+            return response.json().then(tratados => retorno(tratados))            
         }});
         
 
@@ -35,7 +35,7 @@ document.querySelector('button').onclick = () => {
                 return final
             }
         }
-    }  
-    document.querySelector('#avatarBlank').href = `https://github.com/${usuario.value}`;
-    document.querySelector(".main").style.display = 'block';
+        document.querySelector('#avatarBlank').href = `https://github.com/${usuario.value}`;
+        document.querySelector(".main").style.display = 'block';
+    }
 }
