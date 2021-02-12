@@ -1,7 +1,15 @@
 document.querySelector('button').onclick = () => {
     let usuario = document.querySelector('#username');
 
-    fetch(`https://api.github.com/users/${usuario.value}`).then(dados => dados.json()).then(tratados => retorno(tratados));
+    fetch(`https://api.github.com/users/${usuario.value}`)
+    .then(response => {
+        if (response.status === 404) {
+            return alert('Usuario não encontrado!')
+        }
+        else {
+            return response.json().then(tratados => retorno(tratados))
+        }});
+        
 
     const retorno = (result) => {
         for (const campo in result){
